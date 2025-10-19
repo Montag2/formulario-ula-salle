@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>U La Salle | Contacto</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Universidad de La Salle</h1>
+        <nav>
+          <a href="index.html">Inicio</a>
+          <a href="contacto.html" class="active">Formulario de contacto</a>
+          <a href="list_contacts.php">Ver contactos (admin)</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Formulario de contacto U La Salle</h2>
+      <p>
+        Deja tu mensaje y tus datos de contacto. Los campos marcados con * son
+        obligatorios.
+      </p>
+
+      <form
+        id="contactForm"
+        class="card form"
+        method="POST"
+        action="submit_contact.php"
+        novalidate
+      >
+        <div class="grid">
+          <label>
+            Nombres y Apellidos *
+            <input
+              type="text"
+              name="full_name"
+              required
+              minlength="3"
+              maxlength="80"
+              placeholder="Ej. Sarah Useche"
+            />
+          </label>
+          <label>
+            Correo institucional *
+            <input
+              type="email"
+              name="email"
+              required
+              maxlength="120"
+              placeholder="usuario@lasalle.edu.co"
+            />
+          </label>
+        </div>
+
+        <div class="grid">
+          <label>
+            Programa / Facultad
+            <input
+              type="text"
+              name="program"
+              maxlength="80"
+              placeholder="Ingeniería..."
+            />
+          </label>
+          <label>
+            Teléfono
+            <input
+              type="tel"
+              name="phone"
+              maxlength="25"
+              placeholder="+57 3XX XXX XXXX"
+            />
+          </label>
+        </div>
+
+        <label>
+          Asunto *
+          <input
+            type="text"
+            name="subject"
+            required
+            maxlength="120"
+            placeholder="Motivo del mensaje"
+          />
+        </label>
+
+        <label>
+          Mensaje *
+          <textarea
+            name="message"
+            required
+            minlength="10"
+            maxlength="1000"
+            rows="6"
+            placeholder="Escribe tu mensaje aquí..."
+          ></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Enviar</button>
+          <a class="btn-outline" href="index.html">Cancelar</a>
+        </div>
+        <p id="clientError" class="error" hidden></p>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© 2025 | Proyecto académico.</small>
+      </div>
+    </footer>
+  </body>
+</html>
